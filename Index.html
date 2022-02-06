@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+<head>
+	<!--prod-->
+<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="77e1cf59-7629-4afa-aacd-7ed28b83ffff" data-blockingmode="auto" type="text/javascript"></script>
+
+<meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"f1536acf21",applicationID:"450740885"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1215.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="preload" href="https://www.technoserve.org/wp-content/themes/technoserve/assets/fonts/PublicSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://www.technoserve.org/wp-content/themes/technoserve/assets/fonts/PublicSans-BoldItalic.woff2" as="font" type="font/woff2" crossorigin>
+
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v17.3 - https://yoast.com/wordpress/plugins/seo/ -->
+	<link media="all" href="https://www.technoserve.org/wp-content/uploads/autoptimize/css/autoptimize_9b9274748a4959577bffaa8f9157fd85.css" rel="stylesheet" /><title>TechnoServe - Homepage - Business Solutions for Fighting Poverty</title>
+	<meta name="description" content="TechnoServe takes a business approach to fighting poverty by empowering smallholder farmers and entrepreneurs to build brighter futures." />
+	<link rel="canonical" href="https://www.technoserve.org/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="TechnoServe - Homepage - Business Solutions for Fighting Poverty" />
+	<meta property="og:description" content="TechnoServe takes a business approach to fighting poverty by empowering smallholder farmers and entrepreneurs to build brighter futures." />
+	<meta property="og:url" content="https://www.technoserve.org/" />
+	<meta property="og:site_name" content="TechnoServe" />
+	<meta property="article:publisher" content="https://www.facebook.com/TechnoServe" />
+	<meta property="article:modified_time" content="2022-01-05T21:44:32+00:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@TechnoServe" />
+	<meta name="google-site-verification" content="aOBjnGL5IdYi2BVGkmSexIe7LY9gtyal6srsiNtqRgo" />
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='//www.technoserve.org' />
+<link rel='dns-prefetch' href='//js.hs-scripts.com' />
+<link href='https://cds.taboola.com' rel='preconnect' />
+<link href='https://use.typekit.net' rel='preconnect' />
+<link href='https://fonts.googleapis.com' rel='preconnect' />
+
+
+
+
+
+
+
+
+
+
+
+<link rel='stylesheet' id='adobefonts-css'  href='https://use.typekit.net/sbm2wlm.css?ver=0.8.0' type='text/css' media='all' />
+
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/postscribe/2.0.8/postscribe.min.js?ver=5.8.1' id='postscribe-js-js'></script>
+
+
+<script type='text/javascript' async src='https://cse.google.com/cse.js?cx=006461188923288389256%3Aaenf6pllqb8&#038;ver=0.8.0' id='googlecustomsearch-js'></script>
+
+
+
+
+<link rel="https://api.w.org/" href="https://www.technoserve.org/wp-json/" /><link rel="alternate" type="application/json" href="https://www.technoserve.org/wp-json/wp/v2/pages/14748" />
+<script data-cfasync="false">
+window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};
+a2a_config.callbacks.push({
+    share: function(data) {
+        // Track shares in Google Analytics with Google Tag Manager
+        dataLayer.push({
+            'event': 'AddToAnyShare', 
+            'socialNetwork': 'AddToAny', 
+            'socialAction': data.service, 
+            'socialTarget': data.url
+        });
+    }
+});
+(function(d,s,a,b){a=d.createElement(s);b=d.getElementsByTagName(s)[0];a.async=1;a.src="https://static.addtoany.com/menu/page.js";b.parentNode.insertBefore(a,b);})(document,"script");
+</script>
+
+<!-- Fancybox for WordPress v3.3.3 -->
+
+<!-- END Fancybox for WordPress -->
+			<!-- DO NOT COPY THIS SNIPPET! Start of Page Analytics Tracking for HubSpot WordPress plugin v8.4.90-->
+			
+			<!-- DO NOT COPY THIS SNIPPET! End of Page Analytics Tracking for HubSpot WordPress plugin -->
+						<script>
+				(function() {
+					var hbspt = window.hbspt = window.hbspt || {};
+					hbspt.forms = hbspt.forms || {};
+					hbspt._wpFormsQueue = [];
+					hbspt.enqueueForm = function(formDef) {
+						if (hbspt.forms && hbspt.forms.create) {
+							hbspt.forms.create(formDef);
+						} else {
+							hbspt._wpFormsQueue.push(formDef);
+						}
+					}
+					if (!window.hbspt.forms.create) {
+						Object.defineProperty(window.hbspt.forms, 'create', {
+							configurable: true,
+							get: function() {
+								return hbspt._wpCreateForm;
+							},
+							set: function(value) {
+								hbspt._wpCreateForm = value;
+								while (hbspt._wpFormsQueue.length) {
+									var formDef = hbspt._wpFormsQueue.shift();
+									if (!document.currentScript) {
+										var formScriptId = 'leadin-forms-v2-js';
+										hubspot.utils.currentScript = document.getElementById(formScriptId);
+									}
+									hbspt._wpCreateForm.call(hbspt.forms, formDef);
+								}
+							},
+						});
+					}
+				})();
+			</script>
+				
+				
+		<script type="application/ld+json" id="schema">
+                    {
+    "@context": "http://schema.org/",
+    "@type": "NGO",
+    "name": "Www.technoserve.org",
+    "url": "https://www.technoserve.org",
+    "logo": "https://www.technoserve.org/wp-content/themes/technoserve/assets/img/logo-header-2021.svg",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-202-785-4515",
+        "contactType": "technical support"
+    },
+    "sameAs": [
+        "https://www.facebook.com/TechnoServe/",
+        "https://twitter.com/TechnoServe",
+        "https://www.instagram.com/technoserve/",
+        "https://www.youtube.com/channel/UCfCWvRtQPsI27C9cSin8sCg",
+        "https://www.linkedin.com/company/technoserve/"
+    ]
+}
+                 </script>
+
+<!-- Google Tag Manager Data Layer -->
+
+
+    <!-- Anti-flicker snippet (recommended)  -->
+    
+    
+
+    <!-- Google Tag Manager -->
+    
+    <!-- End Google Tag Manager -->
+	<link rel="icon" href="https://www.technoserve.org/wp-content/uploads/2019/10/technoserve-favicon.ico" sizes="32x32" />
+<link rel="icon" href="https://www.technoserve.org/wp-content/uploads/2019/10/technoserve-favicon.ico" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.technoserve.org/wp-content/uploads/2019/10/technoserve-favicon.ico" />
+<meta name="msapplication-TileImage" content="https://www.technoserve.org/wp-content/uploads/2019/10/technoserve-favicon.ico" />
+		
+		
+
+
+
+
+
+
+</head>
+
+
+<body class="home page-template page-template-templates page-template-extended-default-template page-template-templatesextended-default-template-php page page-id-14748 cookies-set cookies-accepted footer-alt extended-default-page intro-no-text  donation-btn-off" data-template="templates/extended-default-template.php">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe 
+    height="0" width="0" style="display:none;visibility:hidden" data-src="https://www.googletagmanager.com/ns.html?id=GTM-N4SS76S" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+     <a class="skip-link screen-reader-text" href="#contact">Skip to content</a>
+    <div id="top">
+    
+    <header id="header" class="header">
+        <div class="header__wrap">
+              
+    
+    <nav class="main-nav main-nav--small">
+        <div class="main-nav__bar">
+                <button type="button" class="main-nav__toggle primary-nav__toggle">
+                <span class="burger"></span>
+                <span class="main-nav__toggle__close">
+                    <svg xmlns="" version="1.1" width="24" height="24" viewBox="0 0 24 24" role="img" class="svg svg--icon-close"><title>close</title><path d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path></svg>
+                </span>
+                <span class="main-nav__toggle-text">Menu</span>
+            </button>
+                <a href="" class="main-nav__logo">
+    
+                            <img  alt="" data-src="" class="lazyload" src="" /><noscript><img  alt="" data-src="" class="lazyload" src="" /><noscript><img src="" alt=""/></noscript></noscript>                       </a>
+                        </div>
+                 <div class="main-nav__wrap" id="main-nav__wrap">
+                <div class="main-nav__searchbox"> 
+                    <div class="gcse-searchbox-only" data-resultsUrl="/search-results/" data-queryParameterName="search"></div>
+                                </div>
+                <div class="main-nav__nav">
+                              
+        <ul>
+            <li class=" nav__menu-item nav__menu-item--type-custom nav__menu-item--object-custom nav__menu-item--490 nav__menu-item--has-children nav__menu-item--level-0  nav__menu-item--default">
+                                    
+                <a class="nav__menu-link"  href="">Our Story</a>
+    
+    
+    <button class="nav__menu-btn" type="button"><span class="a11y">View Subpages</span><svg xmlns="" xmlns:xlink="http://www.w3.org/1999/xlink" width="13px" height="27px" viewBox="0 0 13 27" version="1.1" role="img" class="svg svg--icon-slider-arrow">    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">        <g transform="translate(-1472.000000, -3844.000000)" class="svg-fill" fill-rule="nonzero">            <g transform="translate(738.000000, 3205.000000)">                <g transform="translate(1.000000, 67.000000)">                    <g>                        <g transform="translate(619.000000, 549.000000)">                            <g transform="translate(0.000000, 0.637820)">                                <polygon transform="translate(120.500000, 36.000000) scale(-1, 1) translate(-120.500000, -36.000000) " points="114 35.9999703 114.892671 37.1021373 124.548373 49 127 46.7957085 118.236969 35.9999703 127 25.2042915 124.548373 23 114.892671 34.8978627 114 35.9999703"></polygon>                            </g>                        </g>                    </g>                </g>            </g>        </g>    </g></svg></button>
+    <div class="sub-nav">
+    <button class="nav__menu-back" type="button"><svg xmlns="" width="27" height="17" role="img" class="svg svg--icon-arrow-long">  <path d="M9.3.363c.483.484.483 1.27 0 1.746L4.222 7.201h21.541c.68 0 1.237.55 1.237 1.24 0 .683-.549 1.24-1.237 1.24H4.215l5.195 5.21c.483.484.483 1.269 0 1.746a1.225 1.225 0 0 1-1.742 0L.6 9.549c-.037-.036-.073-.073-.102-.117A1.245 1.245 0 0 1 0 8.442c0-.397.183-.742.468-.97.008-.007.015-.014.015-.021L7.55.363a1.234 1.234 0 0 1 1.749 0z" fill="#FFF" fill-rule="nonzero"></path></svg> Back</button>
+    
+
+</div>
+</nav> 
+
+
+
+<nav class="main-nav main-nav--large">
+<div class="main-nav__bar container container--xl">
+                <div class="translation-wrapper">
+
+<div id="google_translate_element"></div>
+
+<script type="text/javascript" async="" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</div> 
+            <a href="https://www.technoserve.org" class="main-nav__logo">
+                    <img  alt="" data-src="https://www.technoserve.org/wp-content/uploads/2021/09/TNS-Logo-RGB_Horizontal_Full-Color.svg" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img  alt="" data-src="https://www.technoserve.org/wp-content/uploads/2021/09/TNS-Logo-RGB_Horizontal_Full-Color.svg" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img src="https://www.technoserve.org/wp-content/uploads/2021/09/TNS-Logo-RGB_Horizontal_Full-Color.svg" alt=""/></noscript></noscript>
+                </a>
+                <div class="main-nav__nav">
+                
+<ul>
+        <li class=" nav__menu-item nav__menu-item--type-custom nav__menu-item--object-custom nav__menu-item--490 nav__menu-item--has-children nav__menu-item--level-0  nav__menu-item--default">
+                                
+                                <a class="nav__menu-link"  href="">MUMBAI</a>
+        
+
+        <!-- <button class="nav__menu-btn" type="button"><span class="a11y">View Subpages</span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13px" height="27px" viewBox="0 0 13 27" version="1.1" role="img" class="svg svg--icon-slider-arrow">    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">        <g transform="translate(-1472.000000, -3844.000000)" class="svg-fill" fill-rule="nonzero">            <g transform="translate(738.000000, 3205.000000)">                <g transform="translate(1.000000, 67.000000)">                    <g>                        <g transform="translate(619.000000, 549.000000)">                            <g transform="translate(0.000000, 0.637820)">                                <polygon transform="translate(120.500000, 36.000000) scale(-1, 1) translate(-120.500000, -36.000000) " points="114 35.9999703 114.892671 37.1021373 124.548373 49 127 46.7957085 118.236969 35.9999703 127 25.2042915 124.548373 23 114.892671 34.8978627 114 35.9999703"></polygon>                            </g>                        </g>                    </g>                </g>            </g>        </g>    </g></svg></button>
+        <div class="sub-nav">
+            <button class="nav__menu-back" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="17" role="img" class="svg svg--icon-arrow-long">  <path d="M9.3.363c.483.484.483 1.27 0 1.746L4.222 7.201h21.541c.68 0 1.237.55 1.237 1.24 0 .683-.549 1.24-1.237 1.24H4.215l5.195 5.21c.483.484.483 1.269 0 1.746a1.225 1.225 0 0 1-1.742 0L.6 9.549c-.037-.036-.073-.073-.102-.117A1.245 1.245 0 0 1 0 8.442c0-.397.183-.742.468-.97.008-.007.015-.014.015-.021L7.55.363a1.234 1.234 0 0 1 1.749 0z" fill="#FFF" fill-rule="nonzero"></path></svg> Back</button>
+             -->
+<!-- <div class="sub-nav__wrap">
+    <div class="sub-nav__col">
+    <div class="nav-callout">
+        <span class="nav-callout__title">MUMBAI</span>
+        <p class="nav-callout__text">Collages Of MUMBAI</p>
+    </div>
+</div>
+
+    <div class="sub-nav__col sub-nav__col--columns">
+                                                        <ul class="sub-nav__items ">
+                                        <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--8569 nav__menu-item--level-1  nav__menu-item--default">
+                                    <a class="nav__menu-link" href="/accurate.html">Accurate Institude of Management and Technology</a>
+                                </li>
+                                                                    <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--8571 nav__menu-item--level-1  nav__menu-item--default">
+                                    <a class="nav__menu-link"  href="Harilal Institude/">Harilal Institude of Management  and Technology</a>
+                                </li>
+                                                                    <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--8570 nav__menu-item--level-1  nav__menu-item--default">
+                                    <a class="nav__menu-link"  href="Hirank Institude/">Hirank  businees School</a>
+                                </li>
+                                                                                     </ul> 
+            <ul class="sub-nav__items">
+                        <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--9075 nav__menu-item--level-1  nav__menu-item--default">
+                                    <a class="nav__menu-link"  href="IEC Institude/">IEC Collage of Engineering and Technology</a>
+                                </li>
+                                                                    <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--9076 nav__menu-item--level-1  nav__menu-item--default">
+                                    <a class="nav__menu-link"  href="Ishan Institude/">Ishan Institude of Management and Science</a>
+                                </li>
+                                                                    <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--9077 nav__menu-item--level-1  nav__menu-item--default">
+                                    <a class="nav__menu-link"  href="KM Institude/">KM Mayawati  Collage</a>
+                                </li>
+                                                                    <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--13603 nav__menu-item--level-1  nav__menu-item--default">
+                                    <a class="nav__menu-link"  href="Mihir Institude/">Mihir Bhoj Collage</a>
+                                </li>
+                                                                    <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--13603 nav__menu-item--level-1  nav__menu-item--default">
+                                    <a class="nav__menu-link"  href="Prince Institude/">Prince Institude of Inovative Technology</a>
+                                </li>
+                                                                    <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--13603 nav__menu-item--level-1  nav__menu-item--default">
+                                    <a class="nav__menu-link"  href="RAM Institude/">RAM-Eesh Institude</a>
+                                </li>
+                                                                    <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--13603 nav__menu-item--level-1  nav__menu-item--default">
+                                    <a class="nav__menu-link"  href="RBMI Institude/">RBMI Collage</a>
+                                </li>
+                                                                    <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--13603 nav__menu-item--level-1  nav__menu-item--default">
+                                    <a class="nav__menu-link"  href="RV Institude/">RV Northland Institude</a>
+                                </li>
+                                 </ul> 
+                        
+
+</div>
+</div>
+                        </div>-->
+                </li> 
+         <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--496 nav__menu-item--has-children nav__menu-item--level-0  nav__menu-item--default">
+                                
+                                 <a class="nav__menu-link"  href="">BENGALURU</a>  
+        
+        
+        <!-- <button class="nav__menu-btn" type="button"><span class="a11y">View Subpages</span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13px" height="27px" viewBox="0 0 13 27" version="1.1" role="img" class="svg svg--icon-slider-arrow">    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">        <g transform="translate(-1472.000000, -3844.000000)" class="svg-fill" fill-rule="nonzero">            <g transform="translate(738.000000, 3205.000000)">                <g transform="translate(1.000000, 67.000000)">                    <g>                        <g transform="translate(619.000000, 549.000000)">                            <g transform="translate(0.000000, 0.637820)">                                <polygon transform="translate(120.500000, 36.000000) scale(-1, 1) translate(-120.500000, -36.000000) " points="114 35.9999703 114.892671 37.1021373 124.548373 49 127 46.7957085 118.236969 35.9999703 127 25.2042915 124.548373 23 114.892671 34.8978627 114 35.9999703"></polygon>                            </g>                        </g>                    </g>                </g>            </g>        </g>    </g></svg></button>
+        <div class="sub-nav">
+            <button class="nav__menu-back" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="17" role="img" class="svg svg--icon-arrow-long">  <path d="M9.3.363c.483.484.483 1.27 0 1.746L4.222 7.201h21.541c.68 0 1.237.55 1.237 1.24 0 .683-.549 1.24-1.237 1.24H4.215l5.195 5.21c.483.484.483 1.269 0 1.746a1.225 1.225 0 0 1-1.742 0L.6 9.549c-.037-.036-.073-.073-.102-.117A1.245 1.245 0 0 1 0 8.442c0-.397.183-.742.468-.97.008-.007.015-.014.015-.021L7.55.363a1.234 1.234 0 0 1 1.749 0z" fill="#FFF" fill-rule="nonzero"></path></svg> Back</button>
+              -->
+            <!-- <div class="sub-nav__wrap">
+                <div class="sub-nav__col">
+                <div class="nav-callout">
+                    <span class="nav-callout__title">BENGALURU</span>
+                    <p class="nav-callout__text">Collages Of Bangluru</p>
+                </div>
+            </div>
+
+    <div class="sub-nav__col sub-nav__col--columns">
+                                                        <ul class="sub-nav__items ">
+                                        <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--8693 nav__menu-item--level-1  nav__menu-item--label">
+                                    <a class="nav__menu-link"  href="https://www.technoserve.org/our-work/agriculture/">Agriculture</a>
+                                </li>
+                                                                    <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--499 nav__menu-item--level-1  nav__menu-item--subitem">
+                                    <a class="nav__menu-link"  href="https://www.technoserve.org/our-work/agriculture/coffee/">Coffee</a>
+                                </li>
+                                                                    <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--8760 nav__menu-item--level-1  nav__menu-item--subitem">
+                                    <a class="nav__menu-link"  href="https://www.technoserve.org/our-work/agriculture/cashew/">Cashew</a>
+                                </li>
+                                                                    <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--8766 nav__menu-item--level-1  nav__menu-item--label">
+                                    <a class="nav__menu-link"  href="https://www.technoserve.org/our-work/entrepreneurship/">Entrepreneurship</a>
+                                </li>
+                                                                    <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--497 nav__menu-item--level-1  nav__menu-item--subitem">
+                                    <a class="nav__menu-link"  href="https://www.technoserve.org/our-work/entrepreneurship/food-processing/">Food Processing</a>
+                                </li>
+                                                                    <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--8761 nav__menu-item--level-1  nav__menu-item--subitem">
+                                    <a class="nav__menu-link"  href="https://www.technoserve.org/our-work/entrepreneurship/micro-retail/">Micro-Retail</a>
+                                </li>
+                                                                                    </ul>
+            <ul class="sub-nav__items">
+                        <li class=" nav__menu-item nav__menu-item--type-custom nav__menu-item--object-custom nav__menu-item--503 nav__menu-item--level-1  nav__menu-item--label">
+                                    <a class="nav__menu-link"  href="#">Critical Areas</a>
+                                </li>
+                                                                    <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--13585 nav__menu-item--level-1  nav__menu-item--subitem">
+                                    <a class="nav__menu-link"  href="https://www.technoserve.org/our-work/covid-19/">COVID-19</a>
+                                </li>
+                                                                    <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--8770 nav__menu-item--level-1  nav__menu-item--subitem">
+                                    <a class="nav__menu-link"  href="https://www.technoserve.org/our-work/corporate-sustainability/">Corporate Sustainability</a>
+                                </li>
+                                                                    <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--8763 nav__menu-item--level-1  nav__menu-item--subitem">
+                                    <a class="nav__menu-link"  href="https://www.technoserve.org/our-work/environmental-sustainability/">Environmental Sustainability</a>
+                                </li>
+                                                                    <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--18184 nav__menu-item--level-1  nav__menu-item--subitem">
+                                    <a class="nav__menu-link"  href="https://www.technoserve.org/our-work/food-security/">Food Security</a>
+                                </li>
+                                                                    <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--8771 nav__menu-item--level-1  nav__menu-item--subitem">
+                                    <a class="nav__menu-link"  href="https://www.technoserve.org/our-work/womens-economic-empowerment/">Women’s Economic Empowerment</a>
+                                </li>
+                                                                    <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--8762 nav__menu-item--level-1  nav__menu-item--subitem">
+                                    <a class="nav__menu-link"  href="https://www.technoserve.org/our-work/youth-economic-opportunity/">Youth Economic Opportunity</a>
+                                </li>
+                                                                    <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--8764 nav__menu-item--level-1  nav__menu-item--subitem">
+                                    <a class="nav__menu-link"  href="https://www.technoserve.org/our-work/technology/">Technology</a>
+                                </li>
+                                                                    <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--8640 nav__menu-item--level-1  nav__menu-item--default">
+                                    <a class="nav__menu-link"  href="https://www.technoserve.org/our-work/impact/">Our Impact</a>
+                                </li>
+                                                                    <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--500 nav__menu-item--level-1  nav__menu-item--default">
+                                    <a class="nav__menu-link"  href="https://www.technoserve.org/our-work/where-we-work/">Where We Work</a>
+                                </li>
+                                </ul>
+                        
+
+</div>
+</div>
+                        </div> -->
+
+                        <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--496 nav__menu-item--has-children nav__menu-item--level-0  nav__menu-item--default">
+                                
+                            <a class="nav__menu-link"  href="Noidainstitude/Collages.html">NOIDA</a>
+    
+    
+    <button class="nav__menu-btn" type="button"><span class="a11y">View Subpages</span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13px" height="27px" viewBox="0 0 13 27" version="1.1" role="img" class="svg svg--icon-slider-arrow">    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">        <g transform="translate(-1472.000000, -3844.000000)" class="svg-fill" fill-rule="nonzero">            <g transform="translate(738.000000, 3205.000000)">                <g transform="translate(1.000000, 67.000000)">                    <g>                        <g transform="translate(619.000000, 549.000000)">                            <g transform="translate(0.000000, 0.637820)">                                <polygon transform="translate(120.500000, 36.000000) scale(-1, 1) translate(-120.500000, -36.000000) " points="114 35.9999703 114.892671 37.1021373 124.548373 49 127 46.7957085 118.236969 35.9999703 127 25.2042915 124.548373 23 114.892671 34.8978627 114 35.9999703"></polygon>                            </g>                        </g>                    </g>                </g>            </g>        </g>    </g></svg></button>
+    <div class="sub-nav">
+        <button class="nav__menu-back" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="17" role="img" class="svg svg--icon-arrow-long">  <path d="M9.3.363c.483.484.483 1.27 0 1.746L4.222 7.201h21.541c.68 0 1.237.55 1.237 1.24 0 .683-.549 1.24-1.237 1.24H4.215l5.195 5.21c.483.484.483 1.269 0 1.746a1.225 1.225 0 0 1-1.742 0L.6 9.549c-.037-.036-.073-.073-.102-.117A1.245 1.245 0 0 1 0 8.442c0-.397.183-.742.468-.97.008-.007.015-.014.015-.021L7.55.363a1.234 1.234 0 0 1 1.749 0z" fill="#FFF" fill-rule="nonzero"></path></svg> Back</button>
+        
+<div class="sub-nav__wrap">
+<div class="sub-nav__col">
+<div class="nav-callout">
+    <span class="nav-callout__title">NOIDA</span>
+    <p class="nav-callout__text">Colleges Of Noida</p>
+</div>
+</div>
+
+<div class="sub-nav__col sub-nav__col--columns">
+    <ul class="sub-nav__items ">
+<li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--8569 nav__menu-item--level-1  nav__menu-item--default">
+<a class="nav__menu-link" href="/Noidainstitude/accurate.html">Accurate Institude of Management and Technology</a>
+</li>
+                <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--8571 nav__menu-item--level-1  nav__menu-item--default">
+<a class="nav__menu-link"  href="Harilal Institude/">Harilal Institude of Management  and Technology</a>
+</li>
+                <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--8570 nav__menu-item--level-1  nav__menu-item--default">
+<a class="nav__menu-link"  href="Hirank Institude/">Hirank  businees School</a>
+</li>
+                                 </ul> 
+<ul class="sub-nav__items">
+<li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--9075 nav__menu-item--level-1  nav__menu-item--default">
+<a class="nav__menu-link"  href="IEC Institude/">IEC Collage of Engineering and Technology</a>
+</li>
+                <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--9076 nav__menu-item--level-1  nav__menu-item--default">
+<a class="nav__menu-link"  href="Ishan Institude/">Ishan Institude of Management and Science</a>
+</li>
+                <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--9077 nav__menu-item--level-1  nav__menu-item--default">
+<a class="nav__menu-link"  href="KM Institude/">KM Mayawati  Collage</a>
+</li>
+                <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--13603 nav__menu-item--level-1  nav__menu-item--default">
+<a class="nav__menu-link"  href="/Noidainstitude/Mihir.html">Mihir Bhoj College</a>
+</li>
+                <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--13603 nav__menu-item--level-1  nav__menu-item--default">
+<a class="nav__menu-link"  href="Prince Institude/">Prince Institude of Inovative Technology</a>
+</li>
+                <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--13603 nav__menu-item--level-1  nav__menu-item--default">
+<a class="nav__menu-link"  href="RAM Institude/">Ram-Eesh Institude</a>
+</li>
+                <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--13603 nav__menu-item--level-1  nav__menu-item--default">
+<a class="nav__menu-link"  href="RBMI Institude/">RBMI College</a>
+</li>
+                <li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--13603 nav__menu-item--level-1  nav__menu-item--default">
+<a class="nav__menu-link"  href="RV Institude/">RV Northland Institude</a>
+</li>
+</ul>
+
+
+</div>
+</div>
+                    </div>
+ 
+</nav>
+          </div>
+</header>
+
+<main id="main" class="main">
+	
+
+
+
+    <style>
+       .hp-intro  {background-image: url(https://www.technoserve.org/wp-content/uploads/2022/01/hero3-1400x580.png); background-position: center 20%;}
+        </style>
+            <section class="hp-intro">
+                <div class="container">
+                    <div class="hp-intro-content">
+                        <div class="hp-intro__title"><h2 style="color: white; line-height: 50px; text-align: left;"><strong><span style="font-size: 40pt; color: #ffffff;">Do you want to start 2022 off right?</span></strong></h2>
+                            <p>Make the highest impact and change lives!</p>
+                              </div> 
+                              </div> 
+                              <hr color="black">
+                            <div class="column_content wide_left sticky_right " >
+                                <div class="column_content__col">
+                                    <div class="column_content_stick">
+                                                        <div class="container">
+                            
+                                        </div>
+                                        
+                                            <div class="container">
+        
+        </div>
+                    </div>
+			
+	
+																
+		<div class="card">
+					<div class="card__img-wrap">
+				<noscript><img   alt="At TechnoServe, we're committed to fighting poverty to help people like this shopkeeper in Kenya" data-src="https://www.technoserve.org/wp-content/uploads/2020/04/1_QEaejeP5BKZvp0YyC7t4Fw-177x177.jpeg" class="card__img lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img src="https://www.technoserve.org/wp-content/uploads/2020/04/1_QEaejeP5BKZvp0YyC7t4Fw-177x177.jpeg" class="card__img" alt="At TechnoServe, we're committed to fighting poverty to help people like this shopkeeper in Kenya"></noscript></noscript>
+			</div>
+					<div class="content-wrapper">
+							<header class="card__header">
+
+		</div>
+
+				</div>
+</div>			</div>
+											<div class="layout layout--wysiwyg layout--9   " style="background: >
+				<div class="container">
+	<div class="wysiwyg">
+									
+		</header>
+
+</section>
+			</div>
+											<div class="layout layout--wysiwyg layout--11>   " style="background: >
+				<div class="container">
+	<div class="wysiwyg">
+		
+	</div>
+</div>
+			</div>
+		</main>
+
+
+
+
+
+<footer id="footer" class="footer footer--cta">
+  	
+
+					
+
+		<div class="container">
+  		
+<div class="footer__wrap">
+    <hr>
+		<div class="footer__col">
+		<a href="https://www.technoserve.org" class="footer__logo">
+						<img  alt="TechnoServe Logo" data-src="https://www.technoserve.org/wp-content/themes/technoserve/assets/img/footer-logo.svg" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img src="https://www.technoserve.org/wp-content/themes/technoserve/assets/img/footer-logo.svg" alt="TechnoServe Logo"></noscript>
+					</a>
+		<ul class="footer-social">
+						<li class="footer-social__item">
+				<a href="https://www.facebook.com/TechnoServe" class="footer-social__link" target="_blank" rel="noopener noreferrer">
+					<span class="a11y">
+						Facebook
+					</span>
+					<span aria-hidden="true">
+												<object type="image/svg+xml" data="https://www.technoserve.org/wp-content/uploads/2019/10/icon-facebook.svg"></object>
+											</span>
+				</a>
+			</li>
+						<li class="footer-social__item">
+				<a href="https://twitter.com/TechnoServe" class="footer-social__link" target="_blank" rel="noopener noreferrer">
+					<span class="a11y">
+						Twitter
+					</span>
+					<span aria-hidden="true">
+												<object type="image/svg+xml" data="https://www.technoserve.org/wp-content/uploads/2019/10/icon-twitter.svg"></object>
+											</span>
+				</a>
+			</li>
+						<li class="footer-social__item">
+				<a href="https://www.linkedin.com/company/technoserve/" class="footer-social__link" target="_blank" rel="noopener noreferrer">
+					<span class="a11y">
+						LinkedIn
+					</span>
+					<span aria-hidden="true">
+												<object type="image/svg+xml" data="https://www.technoserve.org/wp-content/uploads/2019/10/icon-linkedin.svg"></object>
+											</span>
+				</a>
+			</li>
+						<li class="footer-social__item">
+				<a href="https://www.instagram.com/technoserve/" class="footer-social__link" target="_blank" rel="noopener noreferrer">
+					<span class="a11y">
+						Instagram
+					</span>
+					<span aria-hidden="true">
+												<object type="image/svg+xml" data="https://www.technoserve.org/wp-content/uploads/2019/10/icon-instagram.svg"></object>
+											</span>
+				</a>
+			</li>
+						<li class="footer-social__item">
+				<a href="https://www.youtube.com/user/technoserveglobal" class="footer-social__link" target="_blank" rel="noopener noreferrer">
+					<span class="a11y">
+						YouTube
+					</span>
+					<span aria-hidden="true">
+												<img  alt="YouTube Icon" data-src="https://www.technoserve.org/wp-content/uploads/2020/02/YouTube-Icon-e1582049131417.png" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img  alt="YouTube Icon" data-src="https://www.technoserve.org/wp-content/uploads/2020/02/YouTube-Icon-e1582049131417.png" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img src="https://www.technoserve.org/wp-content/uploads/2020/02/YouTube-Icon-e1582049131417.png" alt="YouTube Icon"/></noscript></noscript>
+											</span>
+				</a>
+			</li>
+					 </ul>
+	</div>
+		<div class="footer__col">
+		<nav class="footer-nav">
+								<div class="footer-nav__links">
+				<ul class="footer-nav__list clearfix"><li class="footer-nav__item  nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--6641 nav__menu-item--has-children nav__menu-item--level-0 nav__menu-item--default"><a class="nav__link" href="https://www.technoserve.org/about-us/">About Us</a></li><li class="footer-nav__item  nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--6644 nav__menu-item--level-1 nav__menu-item--default"><a class="nav__link" href="https://www.technoserve.org/about-us/our-mission/">Our Mission</a></li><li class="footer-nav__item  nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--6643 nav__menu-item--level-1 nav__menu-item--default"><a class="nav__link" href="https://www.technoserve.org/about-us/our-history/">Our History</a></li><li class="footer-nav__item  nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--6645 nav__menu-item--level-1 nav__menu-item--default"><a class="nav__link" href="https://www.technoserve.org/about-us/our-team/">Our Team</a></li><li class="footer-nav__item  nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--6642 nav__menu-item--level-1 nav__menu-item--default"><a class="nav__link" href="https://www.technoserve.org/about-us/financials/">Financials</a></li></ul><ul class="footer-nav__list clearfix"><li class="footer-nav__item  nav__menu-item nav__menu-item--type-custom nav__menu-item--object-custom nav__menu-item--8772 nav__menu-item--has-children nav__menu-item--level-0 nav__menu-item--default"><a class="nav__link" href="/our-work/" rel="noopener">Our Work</a></li><li class="footer-nav__item  nav__menu-item nav__menu-item--type-custom nav__menu-item--object-custom nav__menu-item--8792 nav__menu-item--level-1 nav__menu-item--default"><a class="nav__link" href="/our-work/#how-we-work" rel="noopener">How We Work</a></li><li class="footer-nav__item  nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--6649 nav__menu-item--level-1 nav__menu-item--default"><a class="nav__link" href="https://www.technoserve.org/our-work/impact/">Our Impact</a></li><li class="footer-nav__item  nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--8667 nav__menu-item--level-1 nav__menu-item--default"><a class="nav__link" href="https://www.technoserve.org/our-work/where-we-work/">Where We Work</a></li></ul><ul class="footer-nav__list clearfix"><li class="footer-nav__item  nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--6654 nav__menu-item--has-children nav__menu-item--level-0 nav__menu-item--default"><a class="nav__link" href="https://www.technoserve.org/work-with-us/">Work With Us</a></li><li class="footer-nav__item  nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--6652 nav__menu-item--level-1 nav__menu-item--default"><a class="nav__link" href="https://www.technoserve.org/work-with-us/partner-with-us/">Partner With Us</a></li><li class="footer-nav__item  nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--6651 nav__menu-item--level-1 nav__menu-item--default"><a class="nav__link" href="https://www.technoserve.org/work-with-us/fellows-program/">TechnoServe Fellows</a></li><li class="footer-nav__item  nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--8671 nav__menu-item--level-1 nav__menu-item--default"><a class="nav__link" href="https://www.technoserve.org/work-with-us/careers/">Careers</a></li></ul><ul class="footer-nav__list clearfix"><li class="footer-nav__item  nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--6653 nav__menu-item--has-children nav__menu-item--level-0 nav__menu-item--default"><a class="nav__link" href="https://www.technoserve.org/support-us/">Support Us</a></li><li class="footer-nav__item  nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--8669 nav__menu-item--level-1 nav__menu-item--default"><a class="nav__link" href="https://www.technoserve.org/support-us/global-advisory-council/">Global Advisory Council</a></li><li class="footer-nav__item  nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--8670 nav__menu-item--level-1 nav__menu-item--default"><a class="nav__link" href="https://www.technoserve.org/support-us/circles-of-impact/">Giving Circles</a></li><li class="footer-nav__item  nav__menu-item nav__menu-item--type-custom nav__menu-item--object-custom nav__menu-item--8668 nav__menu-item--level-1 nav__menu-item--donate-btn"></a></li></ul>			</div>
+									<div class="footer-nav__donate">	
+
+											<div class="footer-nav__links footer-nav__links--utility ">
+				<ul class=""><li class="footer-nav__item  nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--6563 nav__menu-item--level-0"><a class="nav__link" href="https://www.technoserve.org/resources/">Resources</a></li><li class="footer-nav__item  nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--6564 nav__menu-item--level-0"><a class="nav__link" href="https://www.technoserve.org/news/">News</a></li><li class="footer-nav__item  nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--6565 nav__menu-item--level-0"><a class="nav__link" href="https://www.technoserve.org/blog/">Blog</a></li><li class="footer-nav__item  nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--6567 nav__menu-item--level-0"><a class="nav__link" href="https://www.technoserve.org/contact-us/">Contact</a></li><li class="footer-nav__item  nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--17787 nav__menu-item--level-0"><a class="nav__link" href="https://www.technoserve.org/faqs/">FAQs</a></li><li class="footer-nav__item  nav__menu-item nav__menu-item--type-custom nav__menu-item--object-custom nav__menu-item--8673 nav__menu-item--level-0"><a class="nav__link" href="/rfps/" rel="noopener">Procurements</a></li><li class="footer-nav__item  nav__menu-item nav__menu-item--type-custom nav__menu-item--object-custom nav__menu-item--6568 nav__menu-item--level-0"><a class="nav__link" href="https://www.technoserve.org/wp-content/uploads/2021/03/Modern-Slavery-Act-Statement-2021.pdf">Anti-Slavery Act</a></li><li class="footer-nav__item  nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--6566 nav__menu-item--level-0"><a class="nav__link" href="https://www.technoserve.org/privacy-policy/">Privacy</a></li></ul>							</div>
+					</nav>
+	</div>
+</div>
+<ul class="footer-social footer-social--small">
+		<li class="footer-social__item">
+		<a href="https://www.facebook.com/TechnoServe" class="footer-social__link" target="_blank" rel="noopener noreferrer">
+			<span class="a11y">
+				Facebook
+			</span>
+			<span aria-hidden="true">
+								<object type="image/svg+xml" data="https://www.technoserve.org/wp-content/uploads/2019/10/icon-facebook.svg"></object>
+							</span>
+		</a>
+	</li>
+		<li class="footer-social__item">
+		<a href="https://twitter.com/TechnoServe" class="footer-social__link" target="_blank" rel="noopener noreferrer">
+			<span class="a11y">
+				Twitter
+			</span>
+			<span aria-hidden="true">
+								<object type="image/svg+xml" data="https://www.technoserve.org/wp-content/uploads/2019/10/icon-twitter.svg"></object>
+							</span>
+		</a>
+	</li>
+		<li class="footer-social__item">
+		<a href="https://www.linkedin.com/company/technoserve/" class="footer-social__link" target="_blank" rel="noopener noreferrer">
+			<span class="a11y">
+				LinkedIn
+			</span>
+			<span aria-hidden="true">
+								<object type="image/svg+xml" data="https://www.technoserve.org/wp-content/uploads/2019/10/icon-linkedin.svg"></object>
+							</span>
+		</a>
+	</li>
+		<li class="footer-social__item">
+		<a href="https://www.instagram.com/technoserve/" class="footer-social__link" target="_blank" rel="noopener noreferrer">
+			<span class="a11y">
+				Instagram
+			</span>
+			<span aria-hidden="true">
+								<object type="image/svg+xml" data="https://www.technoserve.org/wp-content/uploads/2019/10/icon-instagram.svg"></object>
+							</span>
+		</a>
+	</li>
+		<li class="footer-social__item">
+		<a href="https://www.youtube.com/user/technoserveglobal" class="footer-social__link" target="_blank" rel="noopener noreferrer">
+			<span class="a11y">
+				YouTube
+			</span>
+			<span aria-hidden="true">
+								<img  alt="YouTube Icon" data-src="https://www.technoserve.org/wp-content/uploads/2020/02/YouTube-Icon-e1582049131417.png" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img  alt="YouTube Icon" data-src="https://www.technoserve.org/wp-content/uploads/2020/02/YouTube-Icon-e1582049131417.png" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img src="https://www.technoserve.org/wp-content/uploads/2020/02/YouTube-Icon-e1582049131417.png" alt="YouTube Icon"/></noscript></noscript>
+							</span>
+		</a>
+	</li>
+	</ul>
+
+<p class="footer__copyright">Copyright 2022 TechnoServe, Inc. TechnoServe Inc. is a 501(c)(3) status non-profit organization. Our charity and federal tax EIN is: 13-2626135.</p>  	</div>
+  </footer>
+
+	</div>
+<div class="modal-overlay" id="modal-overlay"></div>
+				
+	
+
+<div aria-hidden="true" class="modal" id="modal-video-4">
+	<button class="modal__close" type="button">
+		<span class="a11y">Close Search</span>
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="24" height="24" viewBox="0 0 24 24" role="img" class="svg svg--icon-close"><title>close</title><path d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path></svg>
+	</button>
+	<div class="modal__content">
+		<div class="video-embed__video">
+			<div data-embed='<iframe title="Covid 19 Support: Helping Farmers &amp; Entrepreneurs Around the World" width="640" height="360"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-src="https://www.youtube.com/embed/NhkAE2UPK40?feature=oembed" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></iframe>'></div>
+					</div>
+	</div>
+</div>
+							<div class="nav-overlay modal" id="utility-nav">
+	<div class="container">
+		<div class="nav-overlay__utility">
+																																																																			
+			
+<div class="sub-nav__wrap">
+		<div class="sub-nav__col">
+		<div class="nav-callout">
+			<span class="nav-callout__title">Support Our Work</span>
+			<p class="nav-callout__text">Your support fuels our mission.</p>
+			<a class="nav-callout__link nav-callout__link--orange" href="/support-us/donate/">Make A Difference</a>
+		</div>
+	</div>
+
+		<div class="sub-nav__col sub-nav__col--columns">
+															<ul class="sub-nav__items ">
+											<li class=" nav__menu-item nav__menu-item--type-custom nav__menu-item--object-custom nav__menu-item--8665 nav__menu-item--level-0  nav__menu-item--default">
+										<a class="nav__menu-link"  href="/support-us">Support Us</a>
+									</li>
+																		<li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--25137 nav__menu-item--level-0  nav__menu-item--">
+										<a class="nav__menu-link"  href="https://www.technoserve.org/support-us/ways-to-donate/">Ways to Give</a>
+									</li>
+																		<li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--521 nav__menu-item--level-0  nav__menu-item--default">
+										<a class="nav__menu-link"  href="https://www.technoserve.org/blog/">Blog</a>
+									</li>
+																		<li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--522 nav__menu-item--level-0  nav__menu-item--default">
+										<a class="nav__menu-link"  href="https://www.technoserve.org/news/">News</a>
+									</li>
+																						</ul>
+				<ul class="sub-nav__items">
+							<li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--8663 nav__menu-item--level-0  nav__menu-item--default">
+										<a class="nav__menu-link"  href="https://www.technoserve.org/resources/">Resources</a>
+									</li>
+																		<li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--8664 nav__menu-item--level-0  nav__menu-item--default">
+										<a class="nav__menu-link"  href="https://www.technoserve.org/contact-us/">Contact Us</a>
+									</li>
+																		<li class=" nav__menu-item nav__menu-item--type-post_type nav__menu-item--object-page nav__menu-item--17790 nav__menu-item--level-0  nav__menu-item--default">
+										<a class="nav__menu-link"  href="https://www.technoserve.org/faqs/">FAQs</a>
+									</li>
+									</ul>
+							
+
+	</div>
+</div>
+		</div>
+	</div>
+	<div class="nav-overlay__header container container--xl">
+		<img   alt="TechnoServe Logomark" data-src="https://www.technoserve.org/wp-content/themes/technoserve/assets/img/logo-mark.svg" class="nav-overlay__img lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img class="nav-overlay__img" src="https://www.technoserve.org/wp-content/themes/technoserve/assets/img/logo-mark.svg" alt="TechnoServe Logomark"></noscript>
+		<button type="button" class="modal__close nav-overlay__close"><span class="a11y">Close Search</span><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="24" height="24" viewBox="0 0 24 24" role="img" class="svg svg--icon-close"><title>close</title><path d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path></svg></button>
+	</div>
+</div>
+
+
+
+<div class="wp-footer">
+<div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style" style="left:-64px;top:100px;background-color:#ffffff;"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fwww.technoserve.org%2F&amp;linkname=TechnoServe" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fwww.technoserve.org%2F&amp;linkname=TechnoServe" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_email" href="https://www.addtoany.com/add_to/email?linkurl=https%3A%2F%2Fwww.technoserve.org%2F&amp;linkname=TechnoServe" title="Email" rel="nofollow noopener" target="_blank"></a><a class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share"></a></div><div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_default_style" style="bottom:0px;left:0px;background-color:#ffffff;"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fwww.technoserve.org%2F&amp;linkname=TechnoServe" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fwww.technoserve.org%2F&amp;linkname=TechnoServe" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_email" href="https://www.addtoany.com/add_to/email?linkurl=https%3A%2F%2Fwww.technoserve.org%2F&amp;linkname=TechnoServe" title="Email" rel="nofollow noopener" target="_blank"></a><a class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share"></a></div>
+
+
+
+<script type='text/javascript' src='https://js.hs-scripts.com/4709699.js?integration=WordPress' async defer id='hs-script-loader'></script>
+
+
+</div>
+<script data-cookieconsent="ignore" defer src="https://www.technoserve.org/wp-content/uploads/autoptimize/js/autoptimize_6ec0b4dc20fda9479f0ea76f400305b2.js"></script></body>
+</html>
